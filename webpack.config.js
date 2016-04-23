@@ -22,10 +22,15 @@ module.exports = {
             }
         ]
     },
+    plugins: process.env.NODE_ENV === 'production' ? [
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin()
+    ] : [],
     externals: {
         react: 'React'
     },
     resolve: {
         extensions: ['', '.js', '.jsx']
     }
-}
+};
