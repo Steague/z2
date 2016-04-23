@@ -5,7 +5,7 @@ export default React.createClass({
     propTypes: {
         children: React.PropTypes.object.isRequired
     },
-    
+
     render() {
         return (
             <div>
