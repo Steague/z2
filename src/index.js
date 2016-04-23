@@ -1,15 +1,16 @@
-'use strict'
+'use strict';
 
-import { render }      from 'react-dom';
+import React          from 'react';
+import { render }     from 'react-dom';
 import { Router,
          Route,
          browserHistory,
-         IndexRoute }  from 'react-router'
-import Hello           from './components/Axis/Hello';
-import About           from './components/Axis/About'
-import Repos           from './components/Axis/Repos'
-import Repo            from './components/Axis/Repo'
-import Home            from './components/Axis/Home'
+         IndexRoute } from 'react-router';
+import Hello          from './components/Axis/Hello';
+import About          from './components/Axis/About';
+import Repos          from './components/Axis/Repos';
+import Repo           from './components/Axis/Repo';
+import Home           from './components/Axis/Home';
 
 render((
     <Router history={browserHistory}>

@@ -1,9 +1,13 @@
-'use strict'
+'use strict';
 
 import React from 'react';
-import NavLink from './NavLink'
+import NavLink from './NavLink';
 
 export default React.createClass({
+    propTypes: {
+        children: React.PropTypes.object.isRequired
+    },
+
     displayName: 'HelloReact',
 
     render: function() {
@@ -20,6 +24,6 @@ export default React.createClass({
                 {this.props.children}
 
             </div>
-        )
+        );
     }
 });
