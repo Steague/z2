@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import NavLink from './NavLink';
+import NavLink from './Axis/NavLink';
 
 export default React.createClass({
     propTypes: {
@@ -20,7 +20,6 @@ export default React.createClass({
                     <li><NavLink to="/repos">Repos</NavLink></li>
                 </ul>
 
-                {/* add this */}
                 {this.props.children}
 
             </div>

@@ -3,7 +3,7 @@ import { Route,
          IndexRoute } from 'react-router';
 import App            from './App';
 import About          from './Axis/About';
-import Repos          from './Axis/Axis/Repos';
+import Repos          from './Axis/Repos';
 import Repo           from './Axis/Repo';
 import Home           from './Axis/Home';
 
