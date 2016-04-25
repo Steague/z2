@@ -21,7 +21,7 @@ plugins.push(new HtmlWebpackPlugin({
 plugins.push(new CopyWebpackPlugin([
     {
         from: path.resolve(__dirname, "src/client/vendor") + '/react-with-addons.min.js',
-        to: "assets/react-with-addons.min.js"
+        to: "assets/js/react-with-addons.min.js"
     }
 ]));
 
@@ -35,9 +35,9 @@ module.exports = {
         app: ['./src/client/index.js']
     },
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, "dist/client")//,
-        //publicPath: 'http://localhost:8080/assets'
+        filename: 'assets/js/bundle.js',
+        path: path.resolve(__dirname, "dist/client"),
+        publicPath: 'http://localhost:8080'
     },
     module: {
         loaders: [

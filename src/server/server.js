@@ -13,7 +13,8 @@ var log = new Log('info');
 var app = express();
 
 app.use(compression());
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist/client')));
+app.use('/assets/js', express.static(path.join(__dirname, 'dist/client/assets/js')));
 
 app.get('*', (req, res) => {
     match({ routes: routes, location: req.url }, (err, redirect, props) => {
@@ -32,17 +33,23 @@ app.get('*', (req, res) => {
 
 function renderPage(appHtml) {
     return `
-        <!doctype html public="storage">
+        <!DOCTYPE html public="storage">
+
         <html>
-        <meta charset=utf-8/>
-        <title>My First React Router App</title>
-        <link rel=stylesheet href=/index.css>
-        <div id=app>${appHtml}</div>
-        <script src="/bundle.js"></script>
+        <head>
+            <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+            <title>AXIS</title>
+            <script src="/assets/js/react-with-addons.min.js"></script>
+        </head>
+        <body>
+            <div id=content>${appHtml}</div>
+            <script src="/assets/js/bundle.js"></script>
+        </body>
+        </html>
     `;
 }
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {
     log.info('Production Express server running at localhost:' + PORT);
 });
