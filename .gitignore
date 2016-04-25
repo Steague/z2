@@ -1,4 +1,6 @@
+dist/
 node_modules/
 npm-debug.log
 dist/server/server.bundle.js
-dist/client/assets/bundle.js
+dist/client/index.html
+dist/client/bundle.js

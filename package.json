@@ -5,7 +5,7 @@
   "main": "./src/client/index.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:dev": "webpack-dev-server --inline --colors --content-base dist/client/ --history-api-fallback",
+    "start:dev": "npm run build:client && webpack-dev-server --inline --colors --content-base dist/client/ --history-api-fallback",
     "start:prod": "npm run build && node dist/server/server.bundle.js",
     "build:client": "webpack",
     "build:server": "webpack --config webpack.server.config.js",
@@ -25,6 +25,8 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-react": "^6.5.0",
+    "copy-webpack-plugin": "^2.1.3",
+    "html-webpack-plugin": "^2.16.0",
     "http-server": "^0.9.0",
     "jsx-loader": "^0.13.2",
     "lodash": "^4.11.1",
