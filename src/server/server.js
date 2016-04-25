@@ -6,14 +6,14 @@ import compression        from 'compression';
 import { match,
          RouterContext }  from 'react-router';
 import Log                from 'log';
-import routes             from './src/components/routes';
+import routes             from '../client/components/routes';
 
 var log = new Log('info');
 
 var app = express();
 
 app.use(compression());
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (req, res) => {
     match({ routes: routes, location: req.url }, (err, redirect, props) => {

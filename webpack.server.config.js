@@ -3,10 +3,11 @@ var path = require('path');
 
 module.exports = {
 
-    entry: path.resolve(__dirname, 'server.js'),
+    entry: path.resolve(__dirname, './src/server/server.js'),
 
     output: {
-        filename: 'server.bundle.js'
+        filename: 'server.bundle.js',
+        path: path.resolve(__dirname, "dist/server")
     },
 
     target: 'node',
@@ -26,7 +27,14 @@ module.exports = {
 
     module: {
         loaders: [
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react' }
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
+                query: {
+                    presets: ['es2015', 'react']
+                }
+            }
         ]
     }
 
